@@ -15,11 +15,14 @@ const cargarTabla = ()=>{
         td_total.innerText = p.total;
         let td_tipo = document.createElement("td");
         let imagen = document.createElement("i");
-        if(p.tipo == "Combo"){
-            imagen.classList.add("fas","fas-combo");
+        if(p.tipo == "combo"){
+            imagen.classList.add("fas","fa-utensils","text-danger");
+            
         }else{
-            imagen.classList.add("fas","fas-burger");
+            imagen.classList.add("fas","fa-hamburger");
         }
+        td_tipo.classList.add("text-center");
+        td_tipo.appendChild(imagen);
         let td_accion = document.createElement("td");
         let boton = document.createElement("button");
         boton.classList.add("btn","btn-danger");
@@ -31,6 +34,7 @@ const cargarTabla = ()=>{
         tr.appendChild(td_total);
         tr.appendChild(td_tipo);
         tr.appendChild(td_accion);
+        tbody.appendChild(tr);
     }
 }
 document.querySelector("#agregar-btn").addEventListener("click", ()=>{
